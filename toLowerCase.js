@@ -10,18 +10,25 @@ const alphabetLowerCase =
 const convertToLowerCase = function (myString) {
     let lowerCaseString = ""
     for (let i = 0; i < myString.length; i++) {
+        let matchFound = false
         for (let j = 0; j < alphabetUpperCase.length; j++) {
             if (myString[i] === alphabetUpperCase[j]) {
                 lowerCaseString = lowerCaseString.concat(alphabetLowerCase[j])
-                // console.log(alphabetLowerCase[j])
-            }
+                matchFound = true
+            } 
+        }
+        if (!matchFound) {
+            lowerCaseString = lowerCaseString.concat(myString[i])
         }
     }
         return lowerCaseString
 }
 
 console.log(convertToLowerCase("I AM A BIG ! STRING"))
+console.log(convertToLowerCase("I AM"))
+console.log(convertToLowerCase("STRING"))
 
 // 1: i = 0
 //     j = 0
 //         I
+
