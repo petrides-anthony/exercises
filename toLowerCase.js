@@ -28,7 +28,17 @@ console.log(convertToLowerCase("I AM A BIG ! STRING"))
 console.log(convertToLowerCase("I AM"))
 console.log(convertToLowerCase("STRING"))
 
-// 1: i = 0
-//     j = 0
-//         I
+// Bonus: use objects instead of 2 arrays
+/*
+const alpha = {
+    A: 'a',
+    B: 'b',
+    ...
+}
+
+alpha[myString[i]]
+// alpha['B']
+// 'b'
+
+*/
 
