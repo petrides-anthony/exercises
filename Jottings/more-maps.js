@@ -1,16 +1,20 @@
 const generateMapFromText = (searchText) => {
+    let max = 0
     let map = new Map()
-    for (let i = 0; i <searchText.length; i++) {
-        let count = 1
-
+    for (let i = 0; i < searchText.length; i++) {
+        let currentOccurence = 0;
         if (map.has(searchText[i])) {
-            count = count + 1
-            map.set(searchText[i], count)
+            map.set(searchText[i], map.get(searchText[i]) + 1)
+            currentOccurence = map.get(searchText[i])
         } else {
-        map.set(searchText[i], count)
+            map.set(searchText[i], 1)
+            currentOccurence = 1
+        }
+        if (currentOccurence > max) {
+            max = currentOccurence
         }
     }
-    return map
+    return max
 }
 
-console.log(generateMapFromText("abcabcabcdaaaaa"))
+console.log(generateMapFromText("aabccccd"))
